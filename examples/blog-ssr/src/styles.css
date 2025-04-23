@@ -1,0 +1,185 @@
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --dark-color: #34495e;
+  --light-color: #f8f9fa;
+  --gray-color: #95a5a6;
+  --border-color: #e0e0e0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.6;
+  color: var(--dark-color);
+  background-color: var(--light-color);
+}
+
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  background-color: var(--primary-color);
+  padding: 30px 20px;
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.content {
+  padding: 20px;
+}
+
+.content h1 {
+  margin-bottom: 20px;
+  color: var(--dark-color);
+}
+
+.intro {
+  font-size: 1.2rem;
+  color: var(--dark-color);
+  margin-bottom: 30px;
+  padding: 15px;
+  background-color: #f0f7ff;
+  border-left: 4px solid var(--primary-color);
+}
+
+.blog-post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.blog-post-container {
+  position: relative;
+}
+
+.blog-post {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  min-height: 300px;
+}
+
+.blog-post-header {
+  margin-bottom: 15px;
+}
+
+.blog-post-header h2 {
+  color: var(--dark-color);
+  margin-bottom: 5px;
+}
+
+.blog-post-header time {
+  color: var(--gray-color);
+  font-size: 0.9rem;
+}
+
+.blog-post-excerpt {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.blog-post-content {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.blog-post-content p {
+  margin-bottom: 15px;
+}
+
+.blog-post-actions {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  gap: 15px;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.like-button {
+  background-color: var(--secondary-color);
+}
+
+.like-button:hover {
+  background-color: #27ae60;
+}
+
+.post-separator {
+  height: 40px;
+  position: relative;
+}
+
+.post-separator::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--gray-color),
+    transparent
+  );
+  position: absolute;
+  top: 20px;
+  left: 10%;
+  right: 10%;
+}
+
+.hydration-indicator {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 5px 10px;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  margin-left: auto;
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+footer {
+  margin-top: 50px;
+  text-align: center;
+  color: var(--gray-color);
+  font-size: 0.9rem;
+  padding: 20px 0;
+  border-top: 1px solid var(--border-color);
+}

@@ -1,0 +1,5 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`HydrateOnView Server-side > should render all content when server-side rendered 1`] = `"<div><!--$--><div data-testid="child">Test Content</div><!--/$--></div>"`;
+
+exports[`HydrateOnView Server-side > should render all content when server-side rendered with custom props 1`] = `"<div><!--$--><div data-testid="child">Test Content</div><!--/$--></div>"`;
