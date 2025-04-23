@@ -43,6 +43,17 @@ describe('HydrateOnView', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  it('should render the container div with custom styles', () => {
+    const { container } = render(
+      <HydrateOnView style={{ background: 'red' }}>
+        <div data-testid="child">Test Content</div>
+      </HydrateOnView>,
+    );
+
+    expect(screen.queryByTestId('child')).not.toBeInTheDocument();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   it('should observe the container div with an IntersectionObserver', () => {
     const { container } = render(
       <HydrateOnView>
@@ -115,6 +126,24 @@ describe('HydrateOnView', () => {
 
     expect(mockIntersectionObserver.disconnect).toHaveBeenCalled();
     expect(screen.getByTestId('child')).toBeInTheDocument();
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should continue to render the provided style on the container div once hydrated', () => {
+    const { container } = render(
+      <HydrateOnView style={{ background: 'red' }}>
+        <div data-testid="child">Test Content</div>
+      </HydrateOnView>,
+    );
+
+    const mockEntry = {
+      isIntersecting: true,
+    } as IntersectionObserverEntry;
+
+    act(() => {
+      intersectionCallback([mockEntry]);
+    });
+
     expect(container).toMatchSnapshot();
   });
 

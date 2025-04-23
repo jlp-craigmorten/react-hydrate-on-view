@@ -1,6 +1,6 @@
 {
   "name": "react-hydrate-on-view",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "React library for suspending hydration until components enter the viewport.",
   "author": "Craig Morten <craig.morten@waitrose.co.uk>",
   "license": "MIT",

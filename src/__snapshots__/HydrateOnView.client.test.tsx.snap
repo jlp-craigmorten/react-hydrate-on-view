@@ -1,5 +1,19 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`HydrateOnView > should continue to render the provided style on the container div once hydrated 1`] = `
+<div>
+  <div
+    style="background: red;"
+  >
+    <div
+      data-testid="child"
+    >
+      Test Content
+    </div>
+  </div>
+</div>
+`;
+
 exports[`HydrateOnView > should disconnect the IntersectionObserver and hydrate the content when it enters the viewport 1`] = `
 <div>
   <div>
@@ -13,3 +27,9 @@ exports[`HydrateOnView > should disconnect the IntersectionObserver and hydrate 
 `;
 
 exports[`HydrateOnView > should render just the container div when the component is not in the viewport 1`] = `<div />`;
+
+exports[`HydrateOnView > should render the container div with custom styles 1`] = `
+<div
+  style="background: red;"
+/>
+`;

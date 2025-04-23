@@ -66,6 +66,7 @@ A component that defers hydration of its children until they enter the viewport.
 | ---------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | children   | `ReactNode` | The content to be conditionally hydrated.                                                                                                                                   |
 | rootMargin | `string`    | (Optional) Margin around the viewport for triggering hydration early. Uses the same format as CSS margin property, e.g. `"10px 20px 30px 40px"` (top, right, bottom, left). |
+| style      | `object`    | (Optional) Styles object for customising the CSS applied to the container div that wraps children content.                                                                  |
 | threshold  | `number`    | (Optional) Number between 0 and 1 indicating what percentage of the target element must be visible to trigger hydration (0 = any visibility, 1 = fully visible).            |
 
 #### Behavior
@@ -78,6 +79,17 @@ A component that defers hydration of its children until they enter the viewport.
 
 - Components inside `<HydrateOnView />` should be designed to work correctly without hydration until they become visible.
 - This component is most effective when used for below the fold content in server-rendered React applications.
+- This component is compatible with all server-side React APIs for rendering to string and streaming.
+
+## Related
+
+There are several packages that provide similar behaviours, however in each case they make use of a `dangerouslySetInnerHTML` trick to prevent React from hydrating the content.
+
+`react-hydrate-on-view` adopts a modern React 18+ technique using `<Suspense />` to suspend the hydration of the content.
+
+- [react-hydration-on-demand](https://www.npmjs.com/package/react-hydration-on-demand)
+- [react-lazy-hydration](https://www.npmjs.com/package/react-lazy-hydration)
+- [react-lazy-hydrate](https://www.npmjs.com/package/react-lazy-hydrate)
 
 ## Resources
 

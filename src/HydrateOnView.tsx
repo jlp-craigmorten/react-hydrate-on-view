@@ -23,6 +23,10 @@ export interface HydrateOnViewProps {
    */
   rootMargin?: string;
   /**
+   * Styles to apply to the container `<div>` element.
+   */
+  style?: React.CSSProperties;
+  /**
    * Number between `0` and `1` indicating the percentage of the content that
    * should be visible before triggering hydration.
    */
@@ -32,6 +36,7 @@ export interface HydrateOnViewProps {
 export const HydrateOnView: FC<PropsWithChildren<HydrateOnViewProps>> = ({
   children,
   rootMargin,
+  style,
   threshold,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -63,7 +68,7 @@ export const HydrateOnView: FC<PropsWithChildren<HydrateOnViewProps>> = ({
   }, [inView, rootMargin, threshold]);
 
   return (
-    <div ref={ref}>
+    <div ref={ref} style={style}>
       <Suspense fallback={null}>
         <SuspendConditionally suspend={!inView}>
           {children}

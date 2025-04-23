@@ -1,8 +1,12 @@
 import { HydrateOnView } from '../../../../src';
-import { blogPosts } from '../blogPosts';
+import type { BlogPost as IBlogPost } from '../types';
 import BlogPost from './BlogPost';
 
-function BlogPostList() {
+interface BlogPostListProps {
+  blogPosts: IBlogPost[];
+}
+
+function BlogPostList({ blogPosts }: BlogPostListProps) {
   return (
     <div className="blog-post-list">
       {blogPosts.map((post) => (

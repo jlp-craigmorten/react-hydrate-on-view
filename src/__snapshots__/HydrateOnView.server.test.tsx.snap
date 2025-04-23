@@ -2,4 +2,4 @@
 
 exports[`HydrateOnView Server-side > should render all content when server-side rendered 1`] = `"<div><!--$--><div data-testid="child">Test Content</div><!--/$--></div>"`;
 
-exports[`HydrateOnView Server-side > should render all content when server-side rendered with custom props 1`] = `"<div><!--$--><div data-testid="child">Test Content</div><!--/$--></div>"`;
+exports[`HydrateOnView Server-side > should render all content when server-side rendered with custom props 1`] = `"<div style="background:red"><!--$--><div data-testid="child">Test Content</div><!--/$--></div>"`;

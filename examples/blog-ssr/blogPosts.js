@@ -50,7 +50,7 @@ const generateRandomDate = () => {
   return `${month} ${day}, 2025`;
 };
 
-const generateAdditionalPosts = (count: number) => {
+const generateBlogPosts = (count) => {
   const posts = [];
 
   for (let i = 0; i < count; i++) {
@@ -71,4 +71,4 @@ const generateAdditionalPosts = (count: number) => {
   return posts;
 };
 
-export const blogPosts = generateAdditionalPosts(1000);
+export const getBlogPosts = () => generateBlogPosts(1000);
